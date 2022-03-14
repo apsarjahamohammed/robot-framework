@@ -16,4 +16,4 @@ TC2
     Copy File    E:${/}Temp${/}My_Folders${/}notes.txt    E:{/}Temp${/}notes_copy.txt
   Sleep    10s
     Remove File    E:${/}Temp${/}My_Folder${/}notes.txt
-    Create Dictionary   E:${/}Temp${/}My_Folder
+    Create Dictionary   E:${/}Temp${/}My_Folder    True
