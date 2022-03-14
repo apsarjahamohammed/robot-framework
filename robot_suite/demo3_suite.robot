@@ -17,3 +17,6 @@ TC2
   Sleep    10s
     Remove File    E:${/}Temp${/}My_Folder${/}notes.txt
     Create Dictionary   E:${/}Temp${/}My_Folder    True
+    
+TC3
+    Create Directory    E:${/}LTS${/}robot_project${/}My_Folders
