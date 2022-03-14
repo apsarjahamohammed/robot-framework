@@ -13,4 +13,7 @@ TC2
     Create Dictionary   E:${/}Temp{?}My_Folder
     Create File    E:${/}Temp{/}My_folder${/}notes.txt   apsar
 
-    Copy File    C:\Users\Ansar Jaha\Desktop\M.Tech\INTERNSHIP\solo learn python    C:\Users\Ansar Jaha\Desktop\M.Tech\INTERNSHIP\INTERN LETTER
+    Copy File    E:${/}Temp${/}My_Folders${/}notes.txt    E:{/}Temp${/}notes_copy.txt
+  Sleep    10s
+    Remove File    E:${/}Temp${/}My_Folder${/}notes.txt
+    Create Dictionary   E:${/}Temp${/}My_Folder
