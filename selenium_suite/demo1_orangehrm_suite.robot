@@ -30,7 +30,7 @@ TC2
     Click Element      id=menu_pim_viewMyDetails
     Click Element       partial link=Emergency Contacts
     Click Element       id=btnAddContact
-    Input Text      id=emgcontacts[name]       Sat
+    Input Text      id=emgcontacts[name]       apsar
     Input Text    id=emgcontacts[relationship]      Brother
     Input Text      id=emgcontacts[homePhone]       1234
     Input Text      id=emgcontacts[mobilePhone]     5678
