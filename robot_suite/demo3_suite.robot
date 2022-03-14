@@ -19,4 +19,9 @@ TC2
     Create Dictionary   E:${/}Temp${/}My_Folder    True
     
 TC3
-    Create Directory    E:${/}LTS${/}robot_project${/}My_Folders
+    Create Directory    E:${/}LTS${/}robot_project${/}My_Folder
+
+TC4
+    Create Directory    ${EXECDIR}${/}My_Folder
+    Create File    ${EXECDIR}${/}MY_Folder${/}notes.txt     apsar
+    File Should Exist    ${EXECDIR}${/}MY_Folder${/}notes.txt

@@ -1,11 +1,10 @@
-
 *** Test Cases ***
 TC1 print My Name
     Log To Console     Apsar
     Log To Console     hello
 TC2
     Log To Console     apsar
-    Log     hello
+    Log     hell0
 TC3
     ${session_name}     set variable     Robot session
     Log To Console      ${session_name}
