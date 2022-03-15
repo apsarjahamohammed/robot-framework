@@ -15,7 +15,8 @@ TC1
     Switch Window       MediBuddy LaunchPad
     Input Text    id=getInTouchName     Apsar
     Input Text    id=getInTouchEmail     Apsar@gmail.com
-    Input Text    id=getInTouchMobile     123456
-    Input Text    id=getInTouchDesigination     employee
+    Input Text    id=getInTouchMobile     1234567890
+    Input Text    id=getInTouchDesignation     employee
     Input Text    id=getInTouchEmpCount     1
+    Click Element    xpath=//button[text()='Get In Touch']
     Close Window
