@@ -15,7 +15,7 @@ TC1
     Input Text  xpath=//input[@data-sc-field-name='lastName']     jaha
     Input Text  xpath=//input[@data-sc-field-name='email']     apsar@gmail.com
     Input Text  xpath=//input[@data-sc-field-name='phone']     123456
-    Select From List By Label     xpath=//select[@data-sc-field-name='employees'] 10 - 99
+    Select From List By Label     xpath=//select[@data-sc-field-name='employees']      10 - 99
     Click Element    xpath=//input[@type='submit']
     [Teardown]      Close Browser
 
