@@ -11,6 +11,6 @@ TC1
     Click Element    id=signin-block
     Click Element    id=signInLink
     Select Frame    xpath=//iframe[@class='modalIframe']
-    Input Text    id=mobileNoInp    78945
+    Input Text    id=mobileNoInp    12345
     Unselect Frame
     [Teardown]      Close Browser
