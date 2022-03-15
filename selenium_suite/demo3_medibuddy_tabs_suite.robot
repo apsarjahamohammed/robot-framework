@@ -12,9 +12,10 @@ TC1
     Go To    url=https://www.medibuddy.in/
     Click Button    xpath=//button[text()='Not Now']
     Click Element    link=For Employer
-    Switch Browser    MediBuddy LaunchPad
+    Switch Window       MediBuddy LaunchPad
     Input Text    id=getInTouchName     Apsar
     Input Text    id=getInTouchEmail     Apsar@gmail.com
     Input Text    id=getInTouchMobile     123456
     Input Text    id=getInTouchDesigination     employee
-    Input Text    id=getInTouchEMPCount     1
+    Input Text    id=getInTouchEmpCount     1
+    Close Window
