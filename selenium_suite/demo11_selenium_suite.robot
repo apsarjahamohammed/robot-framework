@@ -1,5 +1,6 @@
 *** Settings ***
 Library     SeleniumLibrary
+Library    Collections
 
 #Test Teardown       Close Browser
 
@@ -45,4 +46,15 @@ TC3
     Go To    url=https://nasscom.in/
     Mouse Over    xpath=//a[text()='Membership']
     Click Element    xpath=//a[text()="Members Listing"]
+
+
+    Wait Until Page Contains Element    xpath=//[@id='edit-title']      timeout=50s
+    ${title}   Get Title
+    Log To Console    ${title}
+    Should Be Equal
+
+
+
+
+
 
