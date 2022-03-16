@@ -18,7 +18,7 @@ TC1
 
     ${loc}      Get Location
     Log To Console    ${loc}
-    Press Keys    name=q        Raja
+    Press Keys    name=q        apsar
 
     Press Keys    None    ARROW_DOWN
 
