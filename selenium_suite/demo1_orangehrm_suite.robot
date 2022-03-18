@@ -1,6 +1,7 @@
 *** Settings ***
 Library    OperatingSystem
 Library    SeleniumLibrary
+Library    DatabaseLibrary
 
 *** Test Cases ***
 TC1
@@ -33,4 +34,6 @@ TC2
     Click Element    id=btnSaveEContact
     #Validate
     Table Should Contain    id=emgcontact_list    Apsar jaha
-    Table Should Contain    id=emgcontact_list    5678
+    Table Should Contain    id=emgcontact_list    1234
+    Row Count Is Equal To X    select * from Products where product_id=651    1
+

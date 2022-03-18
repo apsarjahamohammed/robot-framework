@@ -1,5 +1,7 @@
 *** Settings ***
 Library      SeleniumLibrary
+Library      AutoRecoder
+
 
 *** Test Cases ***
 TC1
