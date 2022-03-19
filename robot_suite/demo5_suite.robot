@@ -1,5 +1,6 @@
 *** Settings ***
 Library    Collections
+Library    SeleniumLibrary
 
 *** Variables ***
 ${MY_NAME}      apsar
@@ -27,3 +28,17 @@ TC4
     Log To Console    ${fruits}[0]
     Remove Values From List    ${fruits}    mango
     Log To Console    ${fruits}
+    
+TC5
+    ${count}    Get Length    ${COLORS}
+    Log To Console    ${count}
+    
+    FOR    ${i}    IN RANGE    0    4    1
+        Log To Console    ${i}
+    END
+
+TC6
+    FOR    ${color}    IN    @{COLORS}
+        Log To Console    ${color}
+
+    END

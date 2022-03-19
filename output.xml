@@ -1,32 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220319 10:10:56.549" rpa="false" schemaversion="2">
-<suite id="s1" name="Demo7 Suite" source="E:\LTS\robot_project\robot_suite\demo7_suite.robot">
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220319 12:09:44.904" rpa="false" schemaversion="2">
+<suite id="s1" name="Demo19 Runkeywords Suite" source="E:\LTS\robot_project\selenium_suite\demo19_runkeywords_suite.robot">
 <test id="s1-t1" name="TC1">
-<kw name="Get My Name" library="my_script">
-<var>${my_name}</var>
-<msg timestamp="20220319 10:10:56.768" level="INFO">${my_name} = apsar</msg>
-<status status="PASS" starttime="20220319 10:10:56.768" endtime="20220319 10:10:56.768"/>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<arg>executable_path=${EXECDIR}${/}driver${/}chromedriver.exe</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220319 12:09:45.593" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20220319 12:09:45.592" endtime="20220319 12:09:49.728"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${my_name}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220319 10:10:56.769" endtime="20220319 10:10:56.770"/>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220319 12:09:49.839" endtime="20220319 12:09:49.996"/>
 </kw>
-<kw name="Add Two Number" library="my_script">
-<var>${output}</var>
-<arg>50</arg>
-<arg>499</arg>
-<msg timestamp="20220319 10:10:56.771" level="INFO">${output} = 549.0</msg>
-<status status="PASS" starttime="20220319 10:10:56.771" endtime="20220319 10:10:56.771"/>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>20s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220319 12:09:50.013" endtime="20220319 12:09:50.033"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=https://google.com/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220319 12:09:50.036" level="INFO">Opening url 'https://google.com/'</msg>
+<status status="PASS" starttime="20220319 12:09:50.035" endtime="20220319 12:09:58.818"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<var>@{output}</var>
+<arg>Click Element</arg>
+<arg>xpath=//*[text()='Gmail']</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[text()='Gmail']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220319 12:09:58.824" level="INFO">Clicking element 'xpath=//*[text()='Gmail']'.</msg>
+<status status="PASS" starttime="20220319 12:09:58.822" endtime="20220319 12:10:03.695"/>
+</kw>
+<msg timestamp="20220319 12:10:03.696" level="INFO">@{output} = [ PASS | None ]</msg>
+<status status="PASS" starttime="20220319 12:09:58.820" endtime="20220319 12:10:03.696"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${output}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220319 10:10:56.772" endtime="20220319 10:10:56.773"/>
+<status status="PASS" starttime="20220319 12:10:03.697" endtime="20220319 12:10:03.697"/>
 </kw>
-<status status="PASS" starttime="20220319 10:10:56.767" endtime="20220319 10:10:56.773"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${output}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220319 12:10:03.701" endtime="20220319 12:10:03.703"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${output}[1]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220319 12:10:03.704" endtime="20220319 12:10:03.705"/>
+</kw>
+<if>
+<branch type="IF" condition="'${output}[0]' == 'FAIL'">
+<kw name="Log To Console" library="BuiltIn">
+<arg>PASS</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220319 12:10:03.706" endtime="20220319 12:10:03.707"/>
+</kw>
+<status status="NOT RUN" starttime="20220319 12:10:03.706" endtime="20220319 12:10:03.707"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" library="BuiltIn">
+<arg>fail</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220319 12:10:03.707" endtime="20220319 12:10:03.707"/>
+</kw>
+<status status="PASS" starttime="20220319 12:10:03.707" endtime="20220319 12:10:03.708"/>
+</branch>
+<status status="PASS" starttime="20220319 12:10:03.706" endtime="20220319 12:10:03.708"/>
+</if>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220319 12:10:03.711" endtime="20220319 12:10:06.524"/>
+</kw>
+<status status="PASS" starttime="20220319 12:09:45.590" endtime="20220319 12:10:06.525"/>
 </test>
-<status status="PASS" starttime="20220319 10:10:56.574" endtime="20220319 10:10:56.776"/>
+<status status="PASS" starttime="20220319 12:09:44.908" endtime="20220319 12:10:06.532"/>
 </suite>
 <statistics>
 <total>
@@ -35,7 +87,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Demo7 Suite">Demo7 Suite</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Demo19 Runkeywords Suite">Demo19 Runkeywords Suite</stat>
 </suite>
 </statistics>
 <errors>

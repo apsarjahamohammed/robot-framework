@@ -1,6 +1,6 @@
 *** Settings ***
 Library      SeleniumLibrary
-Library      AutoRecoder
+#Library      AutoRecoder
 
 
 *** Test Cases ***
@@ -9,8 +9,12 @@ TC1
     Open Browser      browser=chrome      executable_path=${EXECDIR}${/}driver${/}chromedriver.exe
     Maximize Browser Window
     Set Selenium Implicit Wait    20s
-
     Go To    url=https://www.medibuddy.in/
+    
+    Run Keyword And Ignore Error    Click Element    xpath=//*[text()='hello']
+
+    Run Keyword And Ignore Error    Click Element    xpath=//button[text()='Not Now']
+
     Click Button    xpath=//button[text()='Not Now']
     Click Element    link=For Employer
     Switch Window       MediBuddy LaunchPad
